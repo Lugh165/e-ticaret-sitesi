@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StyleStore - Premium Moda & Yaşam</title>
+  <meta name="description"
+    content="En trend moda ürünleri, ev dekorasyonu ve yaşam tarzı ürünlerini keşfedin. Ücretsiz kargo, kolay iade." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <p>🎉 <strong>Yılbaşı Kampanyası!</strong> Tüm ürünlerde %20 indirim · Kod: <strong>YILBASI24</strong> · <a
+          href="#products">Alışverişe Başla →</a></p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-content">
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <a href="/" class="logo">
+        <span class="logo-text">StyleStore</span>
+      </a>
+
+      <nav class="nav" id="mainNav">
+        <div class="nav-item has-dropdown">
+          <a href="#products" class="nav-link" onclick="filterByCategory('kadin')">Kadın</a>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-col">
+                <h4>Giyim</h4>
+                <a href="#products" onclick="filterByCategory('kadin', 'elbise')">Elbiseler</a>
+                <a href="#products" onclick="filterByCategory('kadin', 'bluz')">Bluzlar</a>
+                <a href="#products" onclick="filterByCategory('kadin', 'pantolon')">Pantolonlar</a>
+                <a href="#products" onclick="filterByCategory('kadin', 'etek')">Etekler</a>
+                <a href="#products" onclick="filterByCategory('kadin', 'ceket')">Ceketler</a>
+              </div>
+              <div class="mega-col">
+                <h4>Aksesuar</h4>
+                <a href="#products" onclick="filterByCategory('aksesuar', 'canta')">Çantalar</a>
+                <a href="#products" onclick="filterByCategory('aksesuar', 'taki')">Takılar</a>
+                <a href="#products" onclick="filterByCategory('aksesuar', 'sapka')">Şapkalar</a>
+                <a href="#products" onclick="filterByCategory('aksesuar', 'atki')">Eşarplar</a>
+              </div>
+              <div class="mega-col">
+                <h4>Ayakkabı</h4>
+                <a href="#products" onclick="filterByCategory('ayakkabi', 'topuklu')">Topuklu</a>
+                <a href="#products" onclick="filterByCategory('ayakkabi', 'spor')">Spor</a>
+                <a href="#products" onclick="filterByCategory('ayakkabi', 'bot')">Bot</a>
+                <a href="#products" onclick="filterByCategory('ayakkabi', 'sandalet')">Sandalet</a>
+              </div>
+              <div class="mega-col featured">
+                <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&h=400&fit=crop"
+                  alt="Yeni Koleksiyon">
+                <h4>Yeni Koleksiyon</h4>
+                <p>2024 Kış sezonu</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown">
+          <a href="#products" class="nav-link" onclick="filterByCategory('erkek')">Erkek</a>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-col">
+                <h4>Giyim</h4>
+                <a href="#products" onclick="filterByCategory('erkek', 'gomlek'); return true;">Gömlekler</a>
+                <a href="#products" onclick="filterByCategory('erkek', 'tisort'); return true;">T-Shirtler</a>
+                <a href="#products" onclick="filterByCategory('erkek', 'pantolon'); return true;">Pantolonlar</a>
+                <a href="#products" onclick="filterByCategory('erkek', 'ceket'); return true;">Ceketler</a>
+              </div>
+              <div class="mega-col">
+                <h4>Aksesuar</h4>
+                <a href="#products" onclick="filterByCategory('aksesuar', 'saat')">Saatler</a>
+                <a href="#products" onclick="filterByCategory('aksesuar', 'kemer')">Kemerler</a>
+                <a href="#products" onclick="filterByCategory('aksesuar', 'cuzdan')">Cüzdanlar</a>
+                <a href="#products" onclick="filterByCategory('aksesuar', 'gozluk')">Güneş Gözlüğü</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item has-dropdown">
+          <a href="#products" class="nav-link" onclick="filterByCategory('ev')">Ev & Yaşam</a>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="mega-col">
+                <h4>Dekorasyon</h4>
+                <a href="#products" onclick="filterByCategory('ev', 'mum')">Mumlar</a>
+                <a href="#products" onclick="filterByCategory('ev', 'vazo')">Vazolar</a>
+                <a href="#products" onclick="filterByCategory('ev', 'tablo')">Tablolar</a>
+                <a href="#products" onclick="filterByCategory('ev', 'ayna')">Aynalar</a>
+              </div>
+              <div class="mega-col">
+                <h4>Tekstil</h4>
+                <a href="#products" onclick="filterByCategory('ev', 'yastik')">Yastıklar</a>
+                <a href="#products" onclick="filterByCategory('ev', 'battaniye')">Battaniyeler</a>
+                <a href="#products" onclick="filterByCategory('ev', 'perde')">Perdeler</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#products" class="nav-link" onclick="filterByTag('new')">Koleksiyonlar</a>
+        <a href="#products" class="nav-link sale-link" onclick="filterByTag('sale')">İndirim</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn search-toggle" id="searchToggle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </button>
+        <button class="icon-btn" id="userBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+        <button class="icon-btn wishlist-btn" id="wishlistBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
+          </svg>
+          <span class="badge" id="wishlistCount">0</span>
+        </button>
+        <button class="icon-btn cart-btn" id="cartBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+      <div class="container">
+        <div class="search-box-full">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input type="text" placeholder="Ürün, kategori veya marka ara..." class="search-input-full" id="searchInput"
+            autofocus>
+          <button class="search-close" id="searchClose">✕</button>
+        </div>
+        <div class="search-suggestions">
+          <div class="search-trending">
+            <h4>Popüler Aramalar</h4>
+            <div class="trending-tags">
+              <span class="tag">Kışlık Mont</span>
+              <span class="tag">Kazak</span>
+              <span class="tag">Çanta</span>
+              <span class="tag">Bot</span>
+              <span class="tag">Atkı</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Slider -->
+  <section class="hero-slider">
+    <div class="slide active"
+      style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1920&h=1080&fit=crop')">
+      <div class="slide-overlay"></div>
+      <div class="container slide-content">
+        <span class="slide-label">Yeni Sezon</span>
+        <h1>Kış Koleksiyonu<br><span>2024</span></h1>
+        <p>Sezonun en trend parçalarını keşfet</p>
+        <div class="slide-buttons">
+          <a href="#products" class="btn btn-white">Kadın</a>
+          <a href="#products" class="btn btn-outline-white">Erkek</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide"
+      style="background-image: url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&h=1080&fit=crop')">
+      <div class="slide-overlay"></div>
+      <div class="container slide-content">
+        <span class="slide-label">Özel Teklif</span>
+        <h1>%50'ye Varan<br><span>İndirimler</span></h1>
+        <p>Seçili ürünlerde kaçırılmayacak fırsatlar</p>
+        <div class="slide-buttons">
+          <a href="#products" class="btn btn-white">Şimdi Keşfet</a>
+        </div>
+      </div>
+    </div>
+    <div class="slide"
+      style="background-image: url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1920&h=1080&fit=crop')">
+      <div class="slide-overlay"></div>
+      <div class="container slide-content">
+        <span class="slide-label">Ev & Yaşam</span>
+        <h1>Evinize<br><span>Stil Katın</span></h1>
+        <p>Dekorasyon ve yaşam ürünlerinde yenilikler</p>
+        <div class="slide-buttons">
+          <a href="#products" class="btn btn-white">Koleksiyonu Gör</a>
+        </div>
+      </div>
+    </div>
+    <div class="slider-nav">
+      <button class="slider-dot active" data-slide="0"></button>
+      <button class="slider-dot" data-slide="1"></button>
+      <button class="slider-dot" data-slide="2"></button>
+    </div>
+    <button class="slider-arrow prev" id="sliderPrev">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button class="slider-arrow next" id="sliderNext">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </section>
+
+  <!-- Trust Badges -->
+  <section class="trust-badges">
+    <div class="container">
+      <div class="badges-grid">
+        <div class="badge-item">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="1" y="3" width="15" height="13"></rect>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+          </svg>
+          <div>
+            <h4>Ücretsiz Kargo</h4>
+            <p>300₺ üzeri siparişlerde</p>
+          </div>
+        </div>
+        <div class="badge-item">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+          </svg>
+          <div>
+            <h4>Kolay İade</h4>
+            <p>30 gün içinde ücretsiz</p>
+          </div>
+        </div>
+        <div class="badge-item">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          <div>
+            <h4>Güvenli Ödeme</h4>
+            <p>256-bit SSL şifreleme</p>
+          </div>
+        </div>
+        <div class="badge-item">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+            </path>
+          </svg>
+          <div>
+            <h4>7/24 Destek</h4>
+            <p>Her zaman yanınızdayız</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="featured-categories" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <h2>Kategorilere Göz At</h2>
+        <a href="#" class="view-all">Tümünü Gör →</a>
+      </div>
+      <div class="categories-grid">
+        <a href="#" class="category-card large" data-category="kadin">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&h=800&fit=crop" alt="Kadın">
+          <div class="category-overlay">
+            <span class="category-count">250+ Ürün</span>
+            <h3>Kadın</h3>
+            <span class="category-cta">Keşfet →</span>
+          </div>
+        </a>
+        <a href="#" class="category-card" data-category="erkek">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="Erkek">
+          <div class="category-overlay">
+            <span class="category-count">180+ Ürün</span>
+            <h3>Erkek</h3>
+            <span class="category-cta">Keşfet →</span>
+          </div>
+        </a>
+        <a href="#" class="category-card" data-category="aksesuar">
+          <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=600&h=400&fit=crop" alt="Aksesuar">
+          <div class="category-overlay">
+            <span class="category-count">320+ Ürün</span>
+            <h3>Aksesuar</h3>
+            <span class="category-cta">Keşfet →</span>
+          </div>
+        </a>
+        <a href="#" class="category-card" data-category="ev">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&h=400&fit=crop" alt="Ev & Yaşam">
+          <div class="category-overlay">
+            <span class="category-count">150+ Ürün</span>
+            <h3>Ev & Yaşam</h3>
+            <span class="category-cta">Keşfet →</span>
+          </div>
+        </a>
+        <a href="#" class="category-card" data-category="ayakkabi">
+          <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&h=400&fit=crop" alt="Ayakkabı">
+          <div class="category-overlay">
+            <span class="category-count">200+ Ürün</span>
+            <h3>Ayakkabı</h3>
+            <span class="category-cta">Keşfet →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tabs">
+          <button class="tab-btn active" data-tab="new">Yeni Gelenler</button>
+          <button class="tab-btn" data-tab="bestseller">Çok Satanlar</button>
+          <button class="tab-btn" data-tab="sale">İndirimli</button>
+        </div>
+        <a href="#" class="view-all">Tümünü Gör →</a>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be inserted by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection Banner -->
+  <section class="collection-banner">
+    <div class="banner-item"
+      style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?w=960&h=600&fit=crop')">
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <span class="banner-label">Özel Koleksiyon</span>
+        <h2>Minimal Essentials</h2>
+        <p>Zamansız parçalar, sade şıklık</p>
+        <a href="#" class="btn btn-white">Koleksiyonu Keşfet</a>
+      </div>
+    </div>
+    <div class="banner-item"
+      style="background-image: url('https://images.unsplash.com/photo-1558171813-4c088753af8f?w=960&h=600&fit=crop')">
+      <div class="banner-overlay"></div>
+      <div class="banner-content">
+        <span class="banner-label">Limited Edition</span>
+        <h2>Premium Deri</h2>
+        <p>El yapımı, özel tasarım çantalar</p>
+        <a href="#" class="btn btn-white">Şimdi İncele</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Section -->
+  <section class="instagram-section">
+    <div class="container">
+      <div class="section-header center">
+        <h2>@stylestoretr</h2>
+        <p>Bizi Instagram'da takip edin</p>
+      </div>
+      <div class="instagram-grid">
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=300&h=300&fit=crop" alt="Instagram">
+          <div class="instagram-overlay">
+            <span>❤️ 1.2K</span>
+          </div>
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=300&h=300&fit=crop" alt="Instagram">
+          <div class="instagram-overlay">
+            <span>❤️ 856</span>
+          </div>
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=300&h=300&fit=crop" alt="Instagram">
+          <div class="instagram-overlay">
+            <span>❤️ 2.1K</span>
+          </div>
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=300&h=300&fit=crop" alt="Instagram">
+          <div class="instagram-overlay">
+            <span>❤️ 945</span>
+          </div>
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&h=300&fit=crop" alt="Instagram">
+          <div class="instagram-overlay">
+            <span>❤️ 1.5K</span>
+          </div>
+        </a>
+        <a href="#" class="instagram-item">
+          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=300&h=300&fit=crop" alt="Instagram">
+          <div class="instagram-overlay">
+            <span>❤️ 1.8K</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-text">
+          <h2>Fırsatlardan Haberdar Ol</h2>
+          <p>E-bültene kayıt ol, ilk siparişine özel <strong>%15 indirim</strong> kazan</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" placeholder="E-posta adresiniz" class="newsletter-input" required>
+          <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <span class="logo-text">StyleStore</span>
+          </a>
+          <p>Moda ve yaşam tarzı ürünlerinde güvenilir adresiniz. Kaliteli ürünler, uygun fiyatlar ve mükemmel müşteri
+            deneyimi.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                </path>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Pinterest">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.16 9.42 7.63 11.15-.1-.94-.19-2.38.04-3.41.21-.93 1.35-5.73 1.35-5.73s-.34-.69-.34-1.71c0-1.6.93-2.8 2.09-2.8.99 0 1.46.74 1.46 1.63 0 .99-.63 2.48-.96 3.86-.27 1.15.58 2.09 1.71 2.09 2.06 0 3.64-2.17 3.64-5.29 0-2.77-1.99-4.7-4.83-4.7-3.29 0-5.22 2.47-5.22 5.02 0 .99.38 2.06.86 2.64.09.11.11.21.08.32-.09.37-.29 1.15-.33 1.31-.05.22-.17.26-.4.16-1.49-.69-2.42-2.87-2.42-4.62 0-3.76 2.73-7.21 7.88-7.21 4.14 0 7.35 2.95 7.35 6.89 0 4.11-2.59 7.42-6.19 7.42-1.21 0-2.35-.63-2.74-1.37l-.75 2.84c-.27 1.04-1 2.35-1.49 3.15C9.57 23.81 10.76 24 12 24c6.63 0 12-5.37 12-12S18.63 0 12 0z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Mağaza</h4>
+          <a href="#">Kadın</a>
+          <a href="#">Erkek</a>
+          <a href="#">Aksesuar</a>
+          <a href="#">Ev & Yaşam</a>
+          <a href="#">Yeni Gelenler</a>
+          <a href="#">İndirimli Ürünler</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Yardım</h4>
+          <a href="#">Sipariş Takibi</a>
+          <a href="#">Teslimat Bilgileri</a>
+          <a href="#">İade & Değişim</a>
+          <a href="#">Ödeme Seçenekleri</a>
+          <a href="#">Beden Rehberi</a>
+          <a href="#">SSS</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Kurumsal</h4>
+          <a href="#">Hakkımızda</a>
+          <a href="#">Kariyer</a>
+          <a href="#">Sürdürülebilirlik</a>
+          <a href="#">Basın</a>
+          <a href="#">İletişim</a>
+        </div>
+
+        <div class="footer-contact">
+          <h4>İletişim</h4>
+          <p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Ankara, Türkiye
+          </p>
+          <p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+              </path>
+            </svg>
+            0850 123 45 67
+          </p>
+          <p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            info@stylestore.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 StyleStore. Tüm hakları saklıdır.</p>
+        <div class="footer-legal">
+          <a href="#">Gizlilik Politikası</a>
+          <a href="#">Kullanım Koşulları</a>
+          <a href="#">Çerez Politikası</a>
+        </div>
+        <div class="payment-methods">
+          <img src="https://cdn-icons-png.flaticon.com/32/349/349221.png" alt="Visa">
+          <img src="https://cdn-icons-png.flaticon.com/32/349/349228.png" alt="Mastercard">
+          <img src="https://cdn-icons-png.flaticon.com/32/349/349230.png" alt="PayPal">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickViewOverlay">
+    <div class="quick-view-modal" id="quickViewModal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="quick-view-content" id="quickViewContent">
+        <!-- Content will be inserted by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Detail Page -->
+  <div class="product-detail-page" id="productDetailPage">
+    <div class="container">
+      <div class="breadcrumb" id="productBreadcrumb">
+        <a href="#" onclick="goHome()">Ana Sayfa</a>
+        <span>/</span>
+        <a href="#" id="productCategoryLink">Kategori</a>
+        <span>/</span>
+        <span id="productBreadcrumbName">Ürün Adı</span>
+      </div>
+
+      <div class="product-detail-content">
+        <div class="product-detail-gallery">
+          <div class="main-image">
+            <img src="" alt="" id="productDetailImage">
+            <span class="product-detail-badge" id="productDetailBadge"></span>
+          </div>
+        </div>
+
+        <div class="product-detail-info">
+          <span class="product-detail-brand" id="productDetailBrand">Brand</span>
+          <h1 class="product-detail-title" id="productDetailTitle">Ürün Adı</h1>
+
+          <div class="product-detail-rating" id="productDetailRating">
+            <div class="stars">★★★★★</div>
+            <span class="rating-count">(0 değerlendirme)</span>
+          </div>
+
+          <div class="product-detail-price">
+            <span class="current" id="productDetailPrice">₺0</span>
+            <span class="old" id="productDetailOldPrice"></span>
+            <span class="discount" id="productDetailDiscount"></span>
+          </div>
+
+          <p class="product-detail-description" id="productDetailDescription">
+            Ürün açıklaması burada yer alacak.
+          </p>
+
+          <div class="product-detail-colors" id="productDetailColors">
+            <label>Renk Seçimi:</label>
+            <div class="color-options" id="colorOptions"></div>
+          </div>
+
+          <div class="product-detail-size">
+            <label>Beden Seçimi:</label>
+            <div class="size-options">
+              <button class="size-btn">XS</button>
+              <button class="size-btn">S</button>
+              <button class="size-btn active">M</button>
+              <button class="size-btn">L</button>
+              <button class="size-btn">XL</button>
+            </div>
+          </div>
+
+          <div class="product-detail-quantity">
+            <label>Adet:</label>
+            <div class="quantity-selector">
+              <button class="qty-btn" onclick="changeDetailQty(-1)">−</button>
+              <input type="number" value="1" min="1" id="detailQuantity">
+              <button class="qty-btn" onclick="changeDetailQty(1)">+</button>
+            </div>
+          </div>
+
+          <div class="product-detail-actions">
+            <button class="btn btn-primary btn-large" id="addToCartDetailBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              Sepete Ekle
+            </button>
+            <button class="btn btn-outline btn-large" id="addToWishlistDetailBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+              </svg>
+              Favorilere Ekle
+            </button>
+          </div>
+
+          <div class="product-detail-features">
+            <div class="feature-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              <span>Ücretsiz Kargo (300₺ üzeri)</span>
+            </div>
+            <div class="feature-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="23 4 23 10 17 10"></polyline>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+              </svg>
+              <span>30 Gün İade Garantisi</span>
+            </div>
+            <div class="feature-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>Güvenli Ödeme</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-section">
+        <h3>Müşteri Yorumları</h3>
+        <div class="reviews-container">
+          <div class="reviews-list" id="reviewsList">
+            <!-- Reviews will be inserted here -->
+          </div>
+          <div class="review-form-container">
+            <h4>Yorum Yap</h4>
+            <form id="reviewForm" class="review-form">
+              <div class="form-group">
+                <input type="text" id="reviewName" placeholder="Adınız" required>
+              </div>
+              <div class="form-group">
+                <select id="reviewRating" required>
+                  <option value="5">★★★★★ (Çok İyi)</option>
+                  <option value="4">★★★★☆ (İyi)</option>
+                  <option value="3">★★★☆☆ (Orta)</option>
+                  <option value="2">★★☆☆☆ (Kötü)</option>
+                  <option value="1">★☆☆☆☆ (Çok Kötü)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea id="reviewText" placeholder="Yorumunuz" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">Yorumu Gönder</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Sepetim</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Cart items will be inserted by JavaScript -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Ara Toplam</span>
+        <span class="subtotal-amount" id="subtotalAmount">₺0</span>
+      </div>
+      <p class="cart-note">Kargo ve vergiler ödeme sayfasında hesaplanır</p>
+      <button class="btn btn-primary btn-full" id="checkoutBtn">Ödemeye Geç</button>
+      <a href="#products" class="continue-shopping" id="continueShopping">Alışverişe Devam Et</a>
+    </div>
+  </aside>
+
+  <!-- Wishlist Sidebar -->
+  <div class="wishlist-overlay" id="wishlistOverlay"></div>
+  <aside class="wishlist-sidebar" id="wishlistSidebar">
+    <div class="wishlist-header">
+      <h3>❤️ Favorilerim</h3>
+      <button class="wishlist-close" id="wishlistClose">✕</button>
+    </div>
+    <div class="wishlist-items" id="wishlistItems">
+      <!-- Wishlist items will be inserted by JavaScript -->
+    </div>
+    <div class="wishlist-footer">
+      <a href="#products" class="continue-shopping" id="wishlistContinue">Alışverişe Devam Et</a>
+    </div>
+  </aside>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-overlay" id="checkoutOverlay">
+    <div class="checkout-modal">
+      <button class="checkout-close" id="checkoutClose">✕</button>
+      <h2>Ödeme Bilgileri</h2>
+
+      <div class="checkout-summary">
+        <h4>Sipariş Özeti</h4>
+        <div class="checkout-items" id="checkoutItems"></div>
+        <div class="checkout-total">
+          <span>Toplam:</span>
+          <span id="checkoutTotal">₺0</span>
+        </div>
+      </div>
+
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-section">
+          <h4>Kart Bilgileri</h4>
+          <div class="form-group">
+            <label>Kart Üzerindeki İsim</label>
+            <input type="text" id="cardName" placeholder="Ad Soyad" required>
+          </div>
+          <div class="form-group">
+            <label>Kart Numarası</label>
+            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Son Kullanma</label>
+              <input type="text" id="cardExpiry" placeholder="AA/YY" maxlength="5" required>
+            </div>
+            <div class="form-group">
+              <label>CVV</label>
+              <input type="text" id="cardCvv" placeholder="123" maxlength="3" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h4>Teslimat Adresi</h4>
+          <div class="form-group">
+            <label>Ad Soyad</label>
+            <input type="text" id="deliveryName" placeholder="Ad Soyad" required>
+          </div>
+          <div class="form-group">
+            <label>Adres</label>
+            <textarea id="deliveryAddress" placeholder="Mahalle, Sokak, No, Daire..." required></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>İl</label>
+              <input type="text" id="deliveryCity" placeholder="İstanbul" required>
+            </div>
+            <div class="form-group">
+              <label>Posta Kodu</label>
+              <input type="text" id="deliveryZip" placeholder="34000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Telefon</label>
+            <input type="tel" id="deliveryPhone" placeholder="05XX XXX XX XX" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full btn-large">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+          </svg>
+          Siparişi Tamamla
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <div class="toast-icon" id="toastIcon">✓</div>
+    <div class="toast-content">
+      <span class="toast-message" id="toastMessage">Ürün sepete eklendi!</span>
+    </div>
+    <button class="toast-close" onclick="hideToast()">✕</button>
+  </div>
+
+  <!-- Login/Register Modal -->
+  <div class="auth-overlay" id="authOverlay">
+    <div class="auth-modal">
+      <button class="auth-close" id="authClose">✕</button>
+
+      <!-- Login Form -->
+      <div class="auth-form" id="loginForm">
+        <h2>Giriş Yap</h2>
+        <p class="auth-subtitle">Hesabınıza giriş yapın</p>
+
+        <form id="loginFormSubmit">
+          <div class="form-group">
+            <label>E-posta</label>
+            <input type="email" id="loginEmail" placeholder="ornek@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Şifre</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Giriş Yap</button>
+        </form>
+
+        <div class="auth-divider">
+          <span>veya</span>
+        </div>
+
+        <p class="auth-switch">
+          Hesabınız yok mu? <a href="#" onclick="showRegister()">Kayıt Ol</a>
+        </p>
+
+        <div class="admin-login-hint">
+          <small>Admin girişi: admin@stylestore.com / admin123</small>
+        </div>
+      </div>
+
+      <!-- Register Form -->
+      <div class="auth-form" id="registerForm" style="display: none;">
+        <h2>Kayıt Ol</h2>
+        <p class="auth-subtitle">Yeni hesap oluşturun</p>
+
+        <form id="registerFormSubmit">
+          <div class="form-group">
+            <label>Ad Soyad</label>
+            <input type="text" id="registerName" placeholder="Ad Soyad" required>
+          </div>
+          <div class="form-group">
+            <label>E-posta</label>
+            <input type="email" id="registerEmail" placeholder="ornek@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Şifre</label>
+            <input type="password" id="registerPassword" placeholder="••••••••" minlength="6" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Kayıt Ol</button>
+        </form>
+
+        <p class="auth-switch">
+          Zaten hesabınız var mı? <a href="#" onclick="showLogin()">Giriş Yap</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Menu Dropdown -->
+  <div class="user-menu" id="userMenu">
+    <div class="user-menu-header" id="userMenuHeader">
+      <span class="user-avatar">👤</span>
+      <span class="user-name" id="userName">Kullanıcı</span>
+    </div>
+    <div class="user-menu-items">
+      <a href="#" id="myOrdersBtn">📦 Siparişlerim</a>
+      <a href="#" id="myAccountBtn">⚙️ Hesap Ayarları</a>
+      <a href="#" id="adminPanelBtn" style="display: none;">🔧 Admin Paneli</a>
+      <a href="#" id="logoutBtn">🚪 Çıkış Yap</a>
+    </div>
+  </div>
+
+  <!-- Admin Panel Page -->
+  <div class="admin-panel" id="adminPanel">
+    <div class="container">
+      <div class="admin-header">
+        <h1>Admin Paneli</h1>
+        <button class="btn btn-outline" onclick="closeAdminPanel()">← Ana Sayfaya Dön</button>
+      </div>
+
+      <div class="admin-stats">
+        <div class="stat-card">
+          <div class="stat-icon">📦</div>
+          <div class="stat-info">
+            <span class="stat-value" id="totalProducts">24</span>
+            <span class="stat-label">Toplam Ürün</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">👥</div>
+          <div class="stat-info">
+            <span class="stat-value" id="totalUsers">0</span>
+            <span class="stat-label">Kayıtlı Kullanıcı</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">🛒</div>
+          <div class="stat-info">
+            <span class="stat-value" id="totalOrders">0</span>
+            <span class="stat-label">Toplam Sipariş</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💰</div>
+          <div class="stat-info">
+            <span class="stat-value" id="totalRevenue">₺0</span>
+            <span class="stat-label">Toplam Gelir</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-sections">
+        <div class="admin-section">
+          <h3>Kayıtlı Kullanıcılar</h3>
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Ad Soyad</th>
+                  <th>E-posta</th>
+                  <th>Kayıt Tarihi</th>
+                  <th>Rol</th>
+                </tr>
+              </thead>
+              <tbody id="usersTableBody">
+                <!-- Users will be rendered here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="admin-section">
+          <h3>Son Siparişler</h3>
+          <div class="admin-table-container">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Sipariş No</th>
+                  <th>Müşteri</th>
+                  <th>Tutar</th>
+                  <th>Tarih</th>
+                  <th>Durum</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+                <tr>
+                  <td colspan="5" class="empty-row">Henüz sipariş yok</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Chat Widget -->
+  <div class="chat-widget" id="chatWidget">
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chatToggle">
+      <span class="chat-toggle-icon open">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path
+            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+          </path>
+        </svg>
+      </span>
+      <span class="chat-toggle-icon close">✕</span>
+      <span class="chat-pulse"></span>
+    </button>
+
+    <!-- Chat Window -->
+    <div class="chat-window" id="chatWindow">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+            </svg>
+          </div>
+          <div>
+            <h4>StyleStore AI</h4>
+            <span class="chat-status">● Çevrimiçi</span>
+          </div>
+        </div>
+        <button class="chat-minimize" id="chatMinimize">−</button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-message bot">
+          <div class="message-avatar">🤖</div>
+          <div class="message-content">
+            <p>Merhaba! 👋 Ben StyleStore AI asistanınızım.</p>
+            <p>Size nasıl yardımcı olabilirim?</p>
+            <div class="quick-replies">
+              <button class="quick-reply" data-message="Kazak arıyorum">🧥 Kazak arıyorum</button>
+              <button class="quick-reply" data-message="İndirimli ürünler">🏷️ İndirimli ürünler</button>
+              <button class="quick-reply" data-message="Çanta önerir misin?">👜 Çanta önerir misin?</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <form class="chat-input-form" id="chatForm">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Ürün ara veya soru sor..." autocomplete="off">
+        <button type="submit" class="chat-send" id="chatSend">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
